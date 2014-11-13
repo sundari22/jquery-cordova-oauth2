@@ -10,15 +10,14 @@
             
 // template for new oauth2 service            
 function oauth2_login() {
-    $.oauth2({
-        auth_url: '',           // required
-        response_type: '',      // required - "code"/"token"
-        token_url: '',          // required if response_type = 'code'
-        logout_url: '',         // recommended if available
-        client_id: '',          // required
-        client_secret: '',      // required if response_type = 'code'
-        redirect_uri: '',       // required - some dummy url
-        other_params: {}        // optional params object for scope, state, display...
+        auth_url: 'https://accounts.google.com/o/oauth2/auth', // required
+        response_type: 'code',    // required - "code"/"token"
+        token_url: 'https://accounts.google.com/o/oauth2/token',// required if response_type = 'code'
+        logout_url: 'https://accounts.google.com/logout',         // recommended if available
+        client_id: '398902764944-clonrjacq4h0mppg6bivfmp3hsi25sf7.apps.googleusercontent.com',      // required
+        client_secret: 'eLDnmpQ_CoGNksZZ3thL0Yhd',      // required if response_type = 'code'
+        redirect_uri: 'http://users.metropolia.fi/~sivagama/PROJECT/FINAL/oauth2callback',   // required - some dummy url
+        other_params: {scope:https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/youtube}  
     }, function(token, response){
         // do something with token or response
         $("#logs").append("<p class='success'><b>access_token: </b>"+token+"</p>");

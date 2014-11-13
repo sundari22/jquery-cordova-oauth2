@@ -5,7 +5,6 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
         <script type="text/javascript" src="cordova.oauth2.js"></script>
-        <script type="text/javascript" src="xhr.js"></script>
         <script>
             
 // template for new oauth2 service            
@@ -16,8 +15,8 @@ function oauth2_login() {
         logout_url: 'https://accounts.google.com/logout',         // recommended if available
         client_id: '398902764944-clonrjacq4h0mppg6bivfmp3hsi25sf7.apps.googleusercontent.com',      // required
         client_secret: 'eLDnmpQ_CoGNksZZ3thL0Yhd',      // required if response_type = 'code'
-        redirect_uri: 'http://users.metropolia.fi/~sivagama/PROJECT/FINAL/oauth2callback',   // required - some dummy url
-        other_params: {scope:https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/youtube}  
+        redirect_uri: 'http://users.metropolia.fi/~sivagama/PROJECT/PHONEGAP/oauth2callback',   // required - some dummy url
+        other_params: {scope:'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/youtube'}  
     }, function(token, response){
         // do something with token or response
         $("#logs").append("<p class='success'><b>access_token: </b>"+token+"</p>");
